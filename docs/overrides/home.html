@@ -1,0 +1,169 @@
+<!-- Custom HTML site displayed as the Home chapter -->
+
+{% extends "main.html" %} {% block tabs %} {{ super() }}
+
+<html>
+  <head>
+    <title>
+      An Investigation of Unsupervised Cell Tracking and Interactive Fine-Tuning
+    </title>
+    <meta property="og:image" content="resources/images/teaser.gif" />
+    <meta
+      property="og:title"
+      content="An Investigation of Unsupervised Cell Tracking and Interactive Fine-Tuning"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/zerogrid.css" />
+  </head>
+  <body>
+    <br />
+    <center>
+      <span style="font-size: 38px">
+	      An Investigation of Unsupervised Cell Tracking  <br />
+        	and Interactive Fine-Tuning
+      </span>
+      <br />
+      <br />
+      <table align="center" width="800px">
+        <tr>
+          <td align="center">
+            <center>
+              <span style="font-size: 24px" width="100px">Manan Lalit</span>
+            </center>
+          </td>
+          <td align="center">
+            <center>
+              <span style="font-size: 24px" width="100px">Jan Funke</span>
+            </center>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <table align="center" width="400x">
+        <tr>
+          <td align="center" width="150px">
+            <center>
+              <span style="font-size: 24px; color: #3f51b5"
+                ><a href="https://openaccess.thecvf.com/content/ICCV2025W/BIC/papers/Lalit_An_Investigation_of_Unsupervised_Cell_Tracking_and_Interactive_Fine-Tuning_ICCVW_2025_paper.pdf">
+                  [pdf]</a
+                ></span
+              >
+            </center>
+          </td>
+          <td align="center" width="150px">
+            <center>
+              <span style="font-size: 24px; color: #3f51b5"
+                ><a href="https://github.com/funkelab/attrackt">
+                  [code]</a
+                ></span
+              >
+            </center>
+          </td>
+        </tr>
+      </table>
+    </center>
+    <br />
+    <center>
+      <p align="justify" style="width: 1000px">
+Most existing deep learning-based cell tracking methods rely on supervised learning, requiring large-scale annotated datasets that are often unavailable in real-world scenarios. Moreover, many approaches lack tools and methods for correcting mispredicted links or incorporating corrections through fine-tuning. These limitations contribute to the limited adoption of deep learning-based tracking methods in the life sciences, where manual tracking remains the predominant approach. To reduce the annotation burden and enable model training without extensive labeled data, we introduce a loss function for unsupervised training. Our method leverages the predictable dynamics inherent in many biological processes, providing an initialization that does not require an annotated dataset. We further investigate how minimal user-provided annotations can refine tracking accuracy. To this end, we propose an active learning framework that selectively identifies uncertain decisions within the tracking graph, allowing for efficient annotation of the most informative data points. We evaluate our approach on two microscopy datasets, demonstrating the effectiveness of both our unsupervised training strategy and active learning scheme in improving tracking performance.  
+      </p>
+    </center>
+    <hr />
+    <center><h1>Overview</h1></center>
+
+    <br />
+
+    <table align="center" width="1000px">
+      <tr>
+        <td align="center" width="800px">
+          <center>
+            <img class="round" src="./resources/images/overview.png" width="80%" />
+          </center>
+          <!-- </br> -->
+        </td>
+      </tr>
+      <tr>
+        <td align="center" width="800px">
+          <div style="text-align: justify; width: 800px">
+Overview of the Attrackt loss.  
+The Attrackt loss is compatible with any trainable tracking backbone that produces an association matrix. The core idea is to predict a cell’s future appearance from its current appearance. Image patches centered on detections at time frames $t$ and $t{+}1$ are passed through a pre-trained, frozen autoencoder to obtain embeddings $e_t$ and $e_{t{+}1}$ respectively. The embeddings $e_t$ are transformed by a trainable MLP ($\text{m}_{\text{E}}$), then aggregated via the association matrix into a weighted embedding, which is decoded by another trainable MLP ($\text{m}_{\text{D}}$). The decoded embeddings are compared to $e_{t{+}1}$ using an $L_2$ reconstruction loss. In the schematic, frozen modules are shown in blue, and trainable modules in green. Although only two time frames are illustrated, the loss is computed over a multi-frame spatio-temporal window.
+
+          </div>
+        </td>
+      </tr>
+    </table>
+    <br />
+    
+
+    <hr />
+    <center><h1>Unsupervised Results</h1></center>
+
+    <br />
+
+    <table align="center" width="1000px">
+      <tr>
+        <td align="center" width="800px">
+          <center>
+            <img
+              class="round"
+              src="./resources/images/unsupervised.png"
+              width="80%"
+            />
+          </center>
+          <!-- </br> -->
+        </td>
+      </tr>
+      <tr>
+        <td align="center" width="800px">
+          <div style="text-align: justify; width: 800px">
+            <span style="font-size: 14px"
+              ><i>
+		    Quantitative evaluation on two 2D microscopy datasets: <b>Bacteria</b> and <b>HeLa</b>.
+		    We compare three unsupervised baselines and one fully supervised baseline (Position & Supervised Associations) against our proposed unsupervised method (Position & Unsupervised Associations), highlighted in purple. Each column reports a standard tracking metric. For each method, we report the mean over 10 runs. Best-performing unsupervised method per column is highlighted in <b>bold</b>.
+              </i></span
+            >
+          </div>
+        </td>
+      </tr>
+    </table>
+
+
+    <hr />
+    <center><h1>Interactive Fine-Tuning Results</h1></center>
+
+    <br />
+
+    <table align="center" width="1000px">
+      <tr>
+        <td align="center" width="800px">
+          <center>
+            <img
+              class="round"
+              src="./resources/images/active-learning.png"
+              width="80%"
+            />
+          </center>
+          <!-- </br> -->
+        </td>
+      </tr>
+      <tr>
+        <td align="center" width="800px">
+          <div style="text-align: justify; width: 800px">
+            <span style="font-size: 14px"
+              ><i>
+		    Quantitative evaluation of fine-tuning with a limited number of annotations on two microscopy datasets: <b>Bacteria</b> and <b>HeLa</b>.
+Each row corresponds to a dataset, and plots the AOGM metric after providing  ground truth (G.T.) annotations. Each column corresponds to an experimental setup:
+    Extrapolation refers to training with G.T. annotations from the train+val split and evaluating on the test split, while Interpolation refers to providing G.T. annotations directly on the test split, which is also used for evaluation. Results for three sampling strategies (confidence-based, random, and optimal) are shown per dataset and setup. Supervised and Unsupervised baselines correspond to results with Pos. & Sup. Associations and Pos. & Unsup. Associations in the table above.
+              </i></span
+            >
+          </div>
+        </td>
+      </tr>
+    </table>
+
+
+  </body>
+</html>
+
+{% endblock %} {% block content %}{% endblock %} {% block footer %}{% endblock
+%}

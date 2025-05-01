@@ -1,0 +1,89 @@
+# Project information
+site_name: Attrackt
+site_url: https://funkelab.github.io/attrackt
+site_author: Manan Lalit
+site_description: >-
+  Documentation for Attrackt
+
+# Repository
+repo_name: funkelab/attrackt
+repo_url: https://github.com/funkelab/attrackt
+
+# Configuration
+theme:
+  name: material
+  custom_dir: docs/overrides
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  icon:
+    logo: logo
+
+plugins:
+  - mkdocs-jupyter:
+      execute: True
+      include_source: True
+      ignore:
+        - "*/*/*/.ipynb_checkpoints/*.py"
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - mkdocstrings
+
+
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js
+  - js/math-render.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css
+
+
+nav:
+  - Home: index.md
+  - Examples:
+      - Bacteria:
+        - 01: examples/Bacteria/01-preprocessing.py
+        - 02: examples/Bacteria/02-autoencoder.py
+        - 03: examples/Bacteria/03-attrackt-unsupervised.py
+        - 04: examples/Bacteria/04-finetuning.py
+      - HeLa:
+        - 01: examples/HeLa/01-preprocessing.py
+        - 02: examples/HeLa/02-autoencoder.py
+        - 03: examples/HeLa/03-attrackt-unsupervised.py
+        - 04: examples/HeLa/04-finetuning.py
+
