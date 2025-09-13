@@ -51,11 +51,15 @@ theme:
 plugins:
   - mkdocs-jupyter:
       execute: True
-      ignore: ["*/*/*/.ipynb_checkpoints/*.py"]
+      ignore: ["*/*/*/.ipynb_checkpoints/*.py", 
+        #"examples/HeLa/01-preprocessing.py",
+        #"examples/HeLa/02-autoencoder.py",
+      ]
       include_source: True
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - mkdocstrings
+
 
 
 markdown_extensions:
@@ -78,5 +82,5 @@ nav:
         - 01: examples/HeLa/01-preprocessing.py
         - 02: examples/HeLa/02-autoencoder.py
         - 03: examples/HeLa/03-attrackt-unsupervised.py
-        - 04: examples/HeLa/04-ambiguous-nodes.py
-        - 05: examples/HeLa/05-finetuning.py
+        #- 04: examples/HeLa/04-ambiguous-nodes.py
+        #- 05: examples/HeLa/05-finetuning.py
