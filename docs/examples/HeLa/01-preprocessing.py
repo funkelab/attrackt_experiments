@@ -112,9 +112,15 @@ args = {
     "use_different_weights_hyper": True,
     "voxel_size": {"x": 1.0, "y": 1.0},
     "test_csv_file_name": detections_csv_file_name,
-    "sequence_names": ["02"],
+    "sequence_names": ["01", "02"],
     "result_dir_name": result_dir_name,
     "verbose": False,
 }
 
 infer(args)
+
+
+
+
+
+

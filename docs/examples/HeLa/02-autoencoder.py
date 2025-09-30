@@ -109,6 +109,9 @@ train_autoencoder(
 #
 # Next, we use the trained model weights to infer the embeddings for each
 # detection in the dataset.
+# -
+
+
 
 # +
 with open(detections_csv_file_name, newline="") as f:

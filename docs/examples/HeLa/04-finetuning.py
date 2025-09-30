@@ -1,0 +1,72 @@
+# # 04 - Fine-tune trackastra model with supervision on `k` nodes.
+#
+# This notebook uses the zarr container (created in the first notebook), the embeddings (exported to a csv in the second notebook), and the model trained with unsupervised loss (in the third notebook) to fine-tune the model weights with GT supervision.
+
+from attrackt.scripts.trackastra.train_ft_chatgpt import train
+from types import SimpleNamespace
+
+data_dir = "./data"
+
+args = SimpleNamespace(
+    attn_positional_bias="rope",
+    attn_positional_bias_n_spatial=16,
+    augment=2,
+    batch_size=8,
+    cache=False,
+    causal_norm="quiet_softmax",
+    checkpoint_path="HeLa/2025-09-13_09-34-22_HeLa/model.pt",
+    crop_size=(256, 256),
+    d_model=256,
+    delta_cutoff=2,
+    distributed=False,
+    dropout=0.1,
+    dry=False,
+    embeddings_csv=data_dir + "/HeLa/detections_embeddings.csv",
+    epochs=600,
+    example_images=False,
+    feat_embed_per_dim=8,
+    include_pseudo_val_loss=True,
+    logger="tensorboard",
+    lr=1e-4,
+    lambda_=0.1,
+    lora_r=32,
+    lora_alpha=32,
+    lora_dropout=0.1,
+    max_steps=1000000,
+    max_tokens=2048,
+    mixedp=True,
+    model=None,
+    name="HeLa",
+    n_pool_sampler=0,
+    nhead=4,
+    ndim=2,
+    num_decoder_layers=6,
+    num_encoder_layers=6,
+    num_workers=0,
+    outdir="HeLa",
+    pos_embed_per_dim=32,
+    preallocate=True,
+    profile=False,
+    pseudo_supervised_csv="confidence/1000/bottom/edges_sorted.csv",
+    resume=False,
+    seed=42,
+    setup="abc",
+    spatial_pos_cutoff=512,
+    supervised_csv="confidence/1000/top/edges_sorted.csv",
+    timestamp=True,
+    tracking_frequency=-1,
+    train_samples=10000,
+    train_zarr_sequences=["02"],
+    val_zarr_sequences=["02"],
+    warmup_epochs=10,
+    weight_by_dataset=False,
+    weight_by_ndivs=False,
+    window=6,
+    zarr_img_channel=0,
+    zarr_img_key="img",
+    zarr_mask_channel=0,
+    zarr_mask_key="mask",
+    zarr_path=data_dir + "/HeLa/HeLa.zarr",
+)
+
+train(args)
