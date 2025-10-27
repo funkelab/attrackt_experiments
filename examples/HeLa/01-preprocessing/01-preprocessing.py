@@ -19,7 +19,7 @@ from attrackt.scripts.cumulate_scores import cumulate_scores
 
 suffix = "HeLa-v1"  # just a string placeholder to identify the results, in case running multiple experiments. You can modify as needed.
 data_dir = "./data/HeLa/"
-zip_url = "https://drive.google.com/uc?id=1Z-dGmuXVO7I-QeCN7dWksxFJrjM6vfwM"
+zip_url = "https://data.celltrackingchallenge.net/training-datasets/Fluo-N2DL-HeLa.zip"
 
 extract_data(
     zip_url=zip_url,
@@ -38,16 +38,16 @@ extract_data(
 
 
 correct_gt_with_st(
-    silver_truth_dir_name=data_dir + "/HeLa/01_ST/SEG/",
-    gold_truth_dir_name=data_dir + "/HeLa/01_GT/TRA/",
-    combined_truth_dir_name=data_dir + "/HeLa/01_GT/TRA/",
+    silver_truth_dir_name=data_dir + "/Fluo-N2DL-HeLa/01_ST/SEG/",
+    gold_truth_dir_name=data_dir + "/Fluo-N2DL-HeLa/01_GT/TRA/",
+    combined_truth_dir_name=data_dir + "/Fluo-N2DL-HeLa/01_GT/TRA/",
 )
 
 
 correct_gt_with_st(
-    silver_truth_dir_name=data_dir + "/HeLa/02_ST/SEG/",
-    gold_truth_dir_name=data_dir + "/HeLa/02_GT/TRA/",
-    combined_truth_dir_name=data_dir + "/HeLa/02_GT/TRA/",
+    silver_truth_dir_name=data_dir + "/Fluo-N2DL-HeLa/02_ST/SEG/",
+    gold_truth_dir_name=data_dir + "/Fluo-N2DL-HeLa/02_GT/TRA/",
+    combined_truth_dir_name=data_dir + "/Fluo-N2DL-HeLa/02_GT/TRA/",
 )
 
 # ## Export Detection Data to CSV
@@ -70,16 +70,16 @@ test_sequence_names = [
     "02",
 ]
 mask_dir_names = [
-    data_dir + "/HeLa/01_GT/TRA",
-    data_dir + "/HeLa/02_GT/TRA",
+    data_dir + "/Fluo-N2DL-HeLa/01_GT/TRA",
+    data_dir + "/Fluo-N2DL-HeLa/02_GT/TRA",
 ]
 man_track_file_names = [
-    data_dir + "/HeLa/01_GT/TRA/man_track.txt",
-    data_dir + "/HeLa/02_GT/TRA/man_track.txt",
+    data_dir + "/Fluo-N2DL-HeLa/01_GT/TRA/man_track.txt",
+    data_dir + "/Fluo-N2DL-HeLa/02_GT/TRA/man_track.txt",
 ]
 img_dir_names = [
-    data_dir + "/HeLa/01/",
-    data_dir + "/HeLa/02/",
+    data_dir + "/Fluo-N2DL-HeLa/01/",
+    data_dir + "/Fluo-N2DL-HeLa/02/",
 ]
 
 create_csv(
