@@ -650,7 +650,7 @@
   
   
   <span class="md-ellipsis">
-    04 - Fine-tune trackastra model with supervision on nodes.
+    04 - Fine-tune pre-trained trackastra model with sparse supervision.
     
   </span>
   
@@ -806,7 +806,7 @@
   
   
   <span class="md-ellipsis">
-    04 - Fine-tune trackastra model with supervision on nodes.
+    04 - Fine-tune pre-trained trackastra model with sparse supervision.
     
   </span>
   
@@ -1365,7 +1365,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=95b17433">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21480449">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1375,8 +1375,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <ol>
 <li>Download data</li>
 <li>(Optional) Combine instance segmentation masks from silver and gold ground truth</li>
-<li>Convert image and label data to Zarr format</li>
 <li>Save detections into a CSV file</li>
+<li>Convert image and label data to Zarr format</li>
 <li>Compute tracking accuracy metrics with only d(position) as edge cost</li>
 </ol>
 <h2 id="download-data">Download Data<a class="anchor-link" href="#download-data">¶</a></h2><p>The raw <code>.tif</code> images are first downloaded to the directory specified by <code>data_dir</code>.</p>
@@ -1384,7 +1384,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=aa288e69">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=49ac30c3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1415,7 +1415,7 @@ from attrackt.scripts.cumulate_scores import cumulate_scores</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a4bdedd3">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=64a5466a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1446,7 +1446,7 @@ zip_url = "https://drive.google.com/uc?id=1OUj5LtG8SGJZN_M6g63SVs6_54O7oFEK"</di
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b07b9948">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4ab9cfc2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1492,7 +1492,7 @@ zip_url = "https://drive.google.com/uc?id=1OUj5LtG8SGJZN_M6g63SVs6_54O7oFEK"</di
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ad2de023">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=57eb626e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1508,7 +1508,7 @@ It is used here solely for evaluation purposes (e.g., assigning the values in th
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=27517f70">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c98474b2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1615,7 +1615,7 @@ sequence_names = [
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2f8f2772">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7787cad0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1656,7 +1656,7 @@ sequence_names = [
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=58883dac">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9001979b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1761,7 +1761,7 @@ sequence_names = [
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d41dfe24">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5f8c75be">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1866,7 +1866,7 @@ sequence_names = [
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d6d0820b">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=217e47a1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1971,7 +1971,7 @@ sequence_names = [
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=09574eec">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=99b48a58">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3092,7 +3092,7 @@ sequence_names = [
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3d89744b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=acec384e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3111,7 +3111,7 @@ entire dataset.</li>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=34367235">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0977b148">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3138,7 +3138,7 @@ entire dataset.</li>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e391ddf4">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=12a3dbb0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3722,7 +3722,7 @@ entire dataset.</li>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f5045bbe">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cf62496c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3734,7 +3734,7 @@ Please ensure <code>gurobi</code> is installed for a faster solving experience.<
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a8f84899">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=46bf3661">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3787,7 +3787,7 @@ args = {
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=99995307">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e53db22c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3847,13 +3847,13 @@ args = {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                                | 0/92 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                      | 0/92 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:00&lt;00:00, 1107.23it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:00&lt;00:00, 1716.03it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -4116,13 +4116,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                              | 0/6385 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                    | 0/6385 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████| 6385/6385 [00:00&lt;00:00, 311979.49it/s]</pre>
+<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 6385/6385 [00:00&lt;00:00, 311554.84it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -4170,32 +4170,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes:   0%|                                                                                            | 0/6387 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating nodes:   0%|                                                                                                                  | 0/6387 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes: 100%|█████████████████████████████████████████████████████████████████████████████| 6387/6387 [00:00&lt;00:00, 596916.59it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges:   0%|                                                                                         | 0/6385 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges: 100%|██████████████████████████████████████████████████████████████████████████| 6385/6385 [00:00&lt;00:00, 948154.75it/s]</pre>
+<pre>Evaluating nodes: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 6387/6387 [00:00&lt;00:00, 577910.03it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -4208,13 +4189,32 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges:   0%|                                                                                         | 0/6386 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating FP edges:   0%|                                                                                                               | 0/6385 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges: 100%|██████████████████████████████████████████████████████████████████████████| 6386/6386 [00:00&lt;00:00, 991039.53it/s]</pre>
+<pre>Evaluating FP edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 6385/6385 [00:00&lt;00:00, 963332.05it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges:   0%|                                                                                                               | 0/6386 [00:00&lt;?, ?it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 6386/6386 [00:00&lt;00:00, 970816.43it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -4319,13 +4319,13 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                                | 0/29 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                      | 0/29 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 29/29 [00:00&lt;00:00, 4977.69it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 29/29 [00:00&lt;00:00, 4947.92it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -4588,13 +4588,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                               | 0/543 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                     | 0/543 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 543/543 [00:00&lt;00:00, 273115.13it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 543/543 [00:00&lt;00:00, 271099.52it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -4636,32 +4636,13 @@ INFO:attrackt.scripts.motile.run_traccuracy:Using ground truth NetworkX graph...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes:   0%|                                                                                             | 0/550 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating nodes:   0%|                                                                                                                   | 0/550 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes: 100%|███████████████████████████████████████████████████████████████████████████████| 550/550 [00:00&lt;00:00, 601843.78it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges:   0%|                                                                                          | 0/543 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges: 100%|████████████████████████████████████████████████████████████████████████████| 543/543 [00:00&lt;00:00, 934937.22it/s]</pre>
+<pre>Evaluating nodes: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 550/550 [00:00&lt;00:00, 583131.24it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -4674,13 +4655,32 @@ INFO:attrackt.scripts.motile.run_traccuracy:Using ground truth NetworkX graph...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges:   0%|                                                                                          | 0/548 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating FP edges:   0%|                                                                                                                | 0/543 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges: 100%|████████████████████████████████████████████████████████████████████████████| 548/548 [00:00&lt;00:00, 966559.54it/s]</pre>
+<pre>Evaluating FP edges: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 543/543 [00:00&lt;00:00, 989360.15it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges:   0%|                                                                                                                | 0/548 [00:00&lt;?, ?it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 548/548 [00:00&lt;00:00, 895394.85it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -4785,13 +4785,13 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                                | 0/53 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                      | 0/53 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00&lt;00:00, 1776.44it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00&lt;00:00, 1802.42it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -5054,13 +5054,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                              | 0/3511 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                    | 0/3511 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████| 3511/3511 [00:00&lt;00:00, 284196.33it/s]</pre>
+<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3511/3511 [00:00&lt;00:00, 285956.76it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -5108,32 +5108,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes:   0%|                                                                                            | 0/3519 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating nodes:   0%|                                                                                                                  | 0/3519 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes: 100%|█████████████████████████████████████████████████████████████████████████████| 3519/3519 [00:00&lt;00:00, 596136.99it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges:   0%|                                                                                         | 0/3511 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges: 100%|██████████████████████████████████████████████████████████████████████████| 3511/3511 [00:00&lt;00:00, 893417.54it/s]</pre>
+<pre>Evaluating nodes: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 3519/3519 [00:00&lt;00:00, 581734.03it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -5146,13 +5127,32 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges:   0%|                                                                                         | 0/3517 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating FP edges:   0%|                                                                                                               | 0/3511 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges: 100%|██████████████████████████████████████████████████████████████████████████| 3517/3517 [00:00&lt;00:00, 882100.53it/s]</pre>
+<pre>Evaluating FP edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 3511/3511 [00:00&lt;00:00, 943080.46it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges:   0%|                                                                                                               | 0/3517 [00:00&lt;?, ?it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 3517/3517 [00:00&lt;00:00, 955399.43it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -5257,13 +5257,13 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                                | 0/53 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                      | 0/53 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00&lt;00:00, 2191.53it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00&lt;00:00, 2141.58it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -5526,20 +5526,26 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                              | 0/2866 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                    | 0/2866 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████| 2866/2866 [00:00&lt;00:00, 291797.15it/s]</pre>
+<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2866/2866 [00:00&lt;00:00, 290731.50it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>
-INFO:attrackt.scripts.motile.run_traccuracy:Using ground truth NetworkX graph...
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>INFO:attrackt.scripts.motile.run_traccuracy:Using ground truth NetworkX graph...
 </pre>
 </div>
 </div>
@@ -5574,32 +5580,13 @@ INFO:attrackt.scripts.motile.run_traccuracy:Using ground truth NetworkX graph...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes:   0%|                                                                                            | 0/2868 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating nodes:   0%|                                                                                                                  | 0/2868 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes: 100%|█████████████████████████████████████████████████████████████████████████████| 2868/2868 [00:00&lt;00:00, 600502.39it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges:   0%|                                                                                         | 0/2866 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges: 100%|██████████████████████████████████████████████████████████████████████████| 2866/2866 [00:00&lt;00:00, 969894.73it/s]</pre>
+<pre>Evaluating nodes: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 2868/2868 [00:00&lt;00:00, 594654.40it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -5612,13 +5599,32 @@ INFO:attrackt.scripts.motile.run_traccuracy:Using ground truth NetworkX graph...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges:   0%|                                                                                         | 0/2866 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating FP edges:   0%|                                                                                                               | 0/2866 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges: 100%|██████████████████████████████████████████████████████████████████████████| 2866/2866 [00:00&lt;00:00, 951545.58it/s]</pre>
+<pre>Evaluating FP edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2866/2866 [00:00&lt;00:00, 961670.02it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges:   0%|                                                                                                               | 0/2866 [00:00&lt;?, ?it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2866/2866 [00:00&lt;00:00, 964989.59it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -5723,13 +5729,13 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                                | 0/55 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                      | 0/55 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:00&lt;00:00, 2520.17it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:00&lt;00:00, 2519.02it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -5992,13 +5998,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                              | 0/2523 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                    | 0/2523 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████| 2523/2523 [00:00&lt;00:00, 280086.52it/s]</pre>
+<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2523/2523 [00:00&lt;00:00, 250817.21it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -6040,32 +6046,13 @@ INFO:attrackt.scripts.motile.run_traccuracy:Using ground truth NetworkX graph...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes:   0%|                                                                                            | 0/2526 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating nodes:   0%|                                                                                                                  | 0/2526 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes: 100%|█████████████████████████████████████████████████████████████████████████████| 2526/2526 [00:00&lt;00:00, 595314.49it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges:   0%|                                                                                         | 0/2523 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges: 100%|██████████████████████████████████████████████████████████████████████████| 2523/2523 [00:00&lt;00:00, 948058.50it/s]</pre>
+<pre>Evaluating nodes: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 2526/2526 [00:00&lt;00:00, 574369.07it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -6078,13 +6065,32 @@ INFO:attrackt.scripts.motile.run_traccuracy:Using ground truth NetworkX graph...
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges:   0%|                                                                                         | 0/2524 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating FP edges:   0%|                                                                                                               | 0/2523 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges: 100%|██████████████████████████████████████████████████████████████████████████| 2524/2524 [00:00&lt;00:00, 966620.10it/s]</pre>
+<pre>Evaluating FP edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2523/2523 [00:00&lt;00:00, 928917.57it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges:   0%|                                                                                                               | 0/2524 [00:00&lt;?, ?it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 2524/2524 [00:00&lt;00:00, 971498.88it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -6189,13 +6195,13 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                                | 0/55 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                      | 0/55 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:00&lt;00:00, 3679.45it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 55/55 [00:00&lt;00:00, 3667.40it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -6458,13 +6464,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                              | 0/1632 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                    | 0/1632 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████| 1632/1632 [00:00&lt;00:00, 273782.26it/s]</pre>
+<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1632/1632 [00:00&lt;00:00, 288482.14it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -6512,32 +6518,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes:   0%|                                                                                            | 0/1633 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating nodes:   0%|                                                                                                                  | 0/1633 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes: 100%|█████████████████████████████████████████████████████████████████████████████| 1633/1633 [00:00&lt;00:00, 596680.76it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges:   0%|                                                                                         | 0/1632 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges: 100%|██████████████████████████████████████████████████████████████████████████| 1632/1632 [00:00&lt;00:00, 949522.00it/s]</pre>
+<pre>Evaluating nodes: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 1633/1633 [00:00&lt;00:00, 581533.23it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -6550,13 +6537,32 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges:   0%|                                                                                         | 0/1632 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating FP edges:   0%|                                                                                                               | 0/1632 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges: 100%|█████████████████████████████████████████████████████████████████████████| 1632/1632 [00:00&lt;00:00, 1049540.65it/s]</pre>
+<pre>Evaluating FP edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 1632/1632 [00:00&lt;00:00, 951634.11it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges:   0%|                                                                                                               | 0/1632 [00:00&lt;?, ?it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 1632/1632 [00:00&lt;00:00, 997101.84it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -6634,7 +6640,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86f7ac49">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0c70cde9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6645,7 +6651,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=94122e57">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=28af11a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6678,7 +6684,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=afba9967">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=45cf6c4e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

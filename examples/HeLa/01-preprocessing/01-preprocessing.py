@@ -4,8 +4,8 @@
 #
 # 1. Download data
 # 2. (Optional) Combine instance segmentation masks from silver and gold ground truth
-# 3. Convert image and label data to Zarr format
-# 4. Save detections into a CSV file
+# 3. Save detections into a CSV file
+# 4. Convert image and label data to Zarr format
 # 5. Compute tracking accuracy metrics with only d(position) as edge cost
 #
 # ## Download Data

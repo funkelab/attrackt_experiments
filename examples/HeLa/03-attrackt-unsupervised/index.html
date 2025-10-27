@@ -561,7 +561,7 @@
   
   
   <span class="md-ellipsis">
-    04 - Fine-tune trackastra model with supervision on nodes.
+    04 - Fine-tune pre-trained trackastra model with sparse supervision.
     
   </span>
   
@@ -815,7 +815,7 @@
   
   
   <span class="md-ellipsis">
-    04 - Fine-tune trackastra model with supervision on nodes.
+    04 - Fine-tune pre-trained trackastra model with sparse supervision.
     
   </span>
   
@@ -1383,7 +1383,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46a84edd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e2a02099">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1393,19 +1393,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f6677e07">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Create a new dataset class that takes in the zarr container and the image and mask datasets.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a9db07f9">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f73b947d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1464,7 +1453,7 @@ from attrackt.scripts.sort import sort</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b122d5e5">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=eb91fa1e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1505,7 +1494,7 @@ zarr_path = data_dir + "/HeLa.zarr"</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e084b238">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7272d96c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1516,7 +1505,7 @@ zarr_path = data_dir + "/HeLa.zarr"</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=88ee1556">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b520548c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1559,7 +1548,7 @@ n_jobs = 8</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=490fa445">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8e21760d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1614,7 +1603,7 @@ n_jobs = 8</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5b4614c2">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3c2713b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1666,43 +1655,43 @@ val_datasets = [
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:   0%|                                                                                                   | 0/92 [00:00&lt;?, ?it/s]</pre>
+<pre>Normalizing:   0%|                                                                                                                         | 0/92 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  20%|█████████████████▍                                                                       | 18/92 [00:00&lt;00:00, 171.14it/s]</pre>
+<pre>Normalizing:  20%|█████████████████████▋                                                                                         | 18/92 [00:00&lt;00:00, 172.45it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  39%|██████████████████████████████████▊                                                      | 36/92 [00:00&lt;00:00, 164.59it/s]</pre>
+<pre>Normalizing:  39%|███████████████████████████████████████████▍                                                                   | 36/92 [00:00&lt;00:00, 165.18it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  59%|████████████████████████████████████████████████████▏                                    | 54/92 [00:00&lt;00:00, 169.47it/s]</pre>
+<pre>Normalizing:  59%|█████████████████████████████████████████████████████████████████▏                                             | 54/92 [00:00&lt;00:00, 169.71it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  77%|████████████████████████████████████████████████████████████████████▋                    | 71/92 [00:00&lt;00:00, 169.64it/s]</pre>
+<pre>Normalizing:  77%|█████████████████████████████████████████████████████████████████████████████████████▋                         | 71/92 [00:00&lt;00:00, 168.80it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  96%|█████████████████████████████████████████████████████████████████████████████████████▏   | 88/92 [00:00&lt;00:00, 167.38it/s]</pre>
+<pre>Normalizing:  96%|██████████████████████████████████████████████████████████████████████████████████████████████████████████▏    | 88/92 [00:00&lt;00:00, 166.51it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>                                                                                                                                            </pre>
+<pre>                                                                                                                                                                  </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -1715,19 +1704,19 @@ val_datasets = [
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Building windows:   0%|                                                                                              | 0/87 [00:00&lt;?, ?it/s]</pre>
+<pre>Building windows:   0%|                                                                                                                    | 0/87 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>                                                                                                                                            </pre>
+<pre>                                                                                                                                                                  </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>INFO:attrackt.trackastra.data.ctc_zarr_data:Found 49161 objects in 87 windows (6.2s)
+<pre>INFO:attrackt.trackastra.data.ctc_zarr_data:Found 49161 objects in 87 windows (6.1s)
 </pre>
 </div>
 </div>
@@ -1748,37 +1737,37 @@ val_datasets = [
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:   0%|                                                                                                   | 0/92 [00:00&lt;?, ?it/s]</pre>
+<pre>Normalizing:   0%|                                                                                                                         | 0/92 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  20%|█████████████████▍                                                                       | 18/92 [00:00&lt;00:00, 178.16it/s]</pre>
+<pre>Normalizing:  20%|█████████████████████▋                                                                                         | 18/92 [00:00&lt;00:00, 179.49it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  42%|█████████████████████████████████████▋                                                   | 39/92 [00:00&lt;00:00, 195.65it/s]</pre>
+<pre>Normalizing:  43%|████████████████████████████████████████████████▎                                                              | 40/92 [00:00&lt;00:00, 196.29it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  66%|███████████████████████████████████████████████████████████                              | 61/92 [00:00&lt;00:00, 204.56it/s]</pre>
+<pre>Normalizing:  67%|██████████████████████████████████████████████████████████████████████████▊                                    | 62/92 [00:00&lt;00:00, 205.82it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  90%|████████████████████████████████████████████████████████████████████████████████▎        | 83/92 [00:00&lt;00:00, 208.77it/s]</pre>
+<pre>Normalizing:  91%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎         | 84/92 [00:00&lt;00:00, 209.58it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>                                                                                                                                            </pre>
+<pre>                                                                                                                                                                  </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -1791,25 +1780,25 @@ val_datasets = [
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Building windows:   0%|                                                                                              | 0/87 [00:00&lt;?, ?it/s]</pre>
+<pre>Building windows:   0%|                                                                                                                    | 0/87 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Building windows:  85%|███████████████████████████████████████████████████████████████████████▍            | 74/87 [00:00&lt;00:00, 733.32it/s]</pre>
+<pre>Building windows:  85%|██████████████████████████████████████████████████████████████████████████████████████████▏               | 74/87 [00:00&lt;00:00, 730.24it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>                                                                                                                                            </pre>
+<pre>                                                                                                                                                                  </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>INFO:attrackt.trackastra.data.ctc_zarr_data:Found 145106 objects in 87 windows (2.2s)
+<pre>INFO:attrackt.trackastra.data.ctc_zarr_data:Found 145106 objects in 87 windows (2.1s)
 </pre>
 </div>
 </div>
@@ -1830,43 +1819,43 @@ val_datasets = [
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:   0%|                                                                                                   | 0/92 [00:00&lt;?, ?it/s]</pre>
+<pre>Normalizing:   0%|                                                                                                                         | 0/92 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  20%|█████████████████▍                                                                       | 18/92 [00:00&lt;00:00, 170.29it/s]</pre>
+<pre>Normalizing:  20%|█████████████████████▋                                                                                         | 18/92 [00:00&lt;00:00, 170.68it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  39%|██████████████████████████████████▊                                                      | 36/92 [00:00&lt;00:00, 162.58it/s]</pre>
+<pre>Normalizing:  39%|███████████████████████████████████████████▍                                                                   | 36/92 [00:00&lt;00:00, 164.32it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  59%|████████████████████████████████████████████████████▏                                    | 54/92 [00:00&lt;00:00, 168.01it/s]</pre>
+<pre>Normalizing:  59%|█████████████████████████████████████████████████████████████████▏                                             | 54/92 [00:00&lt;00:00, 168.39it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  77%|████████████████████████████████████████████████████████████████████▋                    | 71/92 [00:00&lt;00:00, 166.97it/s]</pre>
+<pre>Normalizing:  77%|█████████████████████████████████████████████████████████████████████████████████████▋                         | 71/92 [00:00&lt;00:00, 168.22it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  96%|█████████████████████████████████████████████████████████████████████████████████████▏   | 88/92 [00:00&lt;00:00, 165.10it/s]</pre>
+<pre>Normalizing:  96%|██████████████████████████████████████████████████████████████████████████████████████████████████████████▏    | 88/92 [00:00&lt;00:00, 166.15it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>                                                                                                                                            </pre>
+<pre>                                                                                                                                                                  </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -1879,13 +1868,13 @@ val_datasets = [
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Building windows:   0%|                                                                                              | 0/87 [00:00&lt;?, ?it/s]</pre>
+<pre>Building windows:   0%|                                                                                                                    | 0/87 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>                                                                                                                                            </pre>
+<pre>                                                                                                                                                                  </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -1912,37 +1901,37 @@ val_datasets = [
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:   0%|                                                                                                   | 0/92 [00:00&lt;?, ?it/s]</pre>
+<pre>Normalizing:   0%|                                                                                                                         | 0/92 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  21%|██████████████████▍                                                                      | 19/92 [00:00&lt;00:00, 184.84it/s]</pre>
+<pre>Normalizing:  21%|██████████████████████▉                                                                                        | 19/92 [00:00&lt;00:00, 189.06it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  43%|██████████████████████████████████████▋                                                  | 40/92 [00:00&lt;00:00, 194.20it/s]</pre>
+<pre>Normalizing:  43%|████████████████████████████████████████████████▎                                                              | 40/92 [00:00&lt;00:00, 197.05it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  67%|███████████████████████████████████████████████████████████▉                             | 62/92 [00:00&lt;00:00, 203.61it/s]</pre>
+<pre>Normalizing:  68%|████████████████████████████████████████████████████████████████████████████                                   | 63/92 [00:00&lt;00:00, 208.69it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Normalizing:  91%|█████████████████████████████████████████████████████████████████████████████████▎       | 84/92 [00:00&lt;00:00, 208.55it/s]</pre>
+<pre>Normalizing:  92%|██████████████████████████████████████████████████████████████████████████████████████████████████████▌        | 85/92 [00:00&lt;00:00, 212.21it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>                                                                                                                                            </pre>
+<pre>                                                                                                                                                                  </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -1955,25 +1944,25 @@ val_datasets = [
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Building windows:   0%|                                                                                              | 0/87 [00:00&lt;?, ?it/s]</pre>
+<pre>Building windows:   0%|                                                                                                                    | 0/87 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Building windows:  84%|██████████████████████████████████████████████████████████████████████▍             | 73/87 [00:00&lt;00:00, 727.95it/s]</pre>
+<pre>Building windows:  86%|███████████████████████████████████████████████████████████████████████████████████████████▍              | 75/87 [00:00&lt;00:00, 742.48it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>                                                                                                                                            </pre>
+<pre>                                                                                                                                                                  </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>INFO:attrackt.trackastra.data.ctc_zarr_data:Found 145106 objects in 87 windows (2.1s)
+<pre>INFO:attrackt.trackastra.data.ctc_zarr_data:Found 145106 objects in 87 windows (2.0s)
 </pre>
 </div>
 </div>
@@ -1981,7 +1970,7 @@ val_datasets = [
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d4ed2e3c">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2af92ca6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2014,7 +2003,7 @@ val_datasets = [
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f06ae031">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=53f8afbb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2025,7 +2014,7 @@ val_datasets = [
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=893ff46e">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=63ca7b54">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2072,7 +2061,7 @@ causal_norm = "quiet_softmax"</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=19b1b978">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1512436d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2129,7 +2118,7 @@ causal_norm = "quiet_softmax"</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29f12bf0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d50de45">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2140,7 +2129,7 @@ causal_norm = "quiet_softmax"</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a52d86b7">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b1c2f185">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2177,7 +2166,7 @@ d_model = 64</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0cc2a3be">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fc178069">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2188,7 +2177,7 @@ d_model = 64</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=21964d4b">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7465e418">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2243,7 +2232,7 @@ d_model = 64</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3e1866a9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2c35c309">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2254,7 +2243,7 @@ d_model = 64</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=27b6d74b">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b323a07c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2283,7 +2272,7 @@ model_checkpoint = f"fully-unsupervised-2025-10-22-{suffix}/models/best/best.pth
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=77d19553">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e65b5155">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2295,7 +2284,7 @@ associations!</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9699f0fd">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c00759f9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2346,7 +2335,7 @@ associations!</p>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bebfe248">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=895eff9a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2357,7 +2346,7 @@ associations!</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4bfbf913">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0994807b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2384,7 +2373,7 @@ associations!</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=583f2a6e">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fe835b50">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2439,7 +2428,7 @@ associations!</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e8e8cfc7">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=13149437">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2499,25 +2488,25 @@ associations!</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                                | 0/92 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                      | 0/92 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre> 38%|██████████████████████████████████████▊                                                               | 35/92 [00:00&lt;00:00, 347.71it/s]</pre>
+<pre> 38%|███████████████████████████████████████████████▏                                                                            | 35/92 [00:00&lt;00:00, 342.78it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre> 93%|███████████████████████████████████████████████████████████████████████████████████████████████▎      | 86/92 [00:00&lt;00:00, 442.83it/s]</pre>
+<pre> 91%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏          | 84/92 [00:00&lt;00:00, 253.62it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:00&lt;00:00, 279.84it/s]</pre>
+<pre>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:00&lt;00:00, 279.15it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -2830,13 +2819,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                             | 0/25225 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                   | 0/25225 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████| 25225/25225 [00:00&lt;00:00, 315494.27it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25225/25225 [00:00&lt;00:00, 325601.63it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -2884,32 +2873,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes:   0%|                                                                                           | 0/25420 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating nodes:   0%|                                                                                                                 | 0/25420 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes: 100%|███████████████████████████████████████████████████████████████████████████| 25420/25420 [00:00&lt;00:00, 573129.11it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges:   0%|                                                                                        | 0/25225 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges: 100%|████████████████████████████████████████████████████████████████████████| 25225/25225 [00:00&lt;00:00, 921293.26it/s]</pre>
+<pre>Evaluating nodes: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 25420/25420 [00:00&lt;00:00, 593106.56it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -2922,13 +2892,32 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges:   0%|                                                                                        | 0/25168 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating FP edges:   0%|                                                                                                              | 0/25225 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges: 100%|████████████████████████████████████████████████████████████████████████| 25168/25168 [00:00&lt;00:00, 993835.67it/s]</pre>
+<pre>Evaluating FP edges: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 25225/25225 [00:00&lt;00:00, 967627.13it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges:   0%|                                                                                                              | 0/25168 [00:00&lt;?, ?it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 25168/25168 [00:00&lt;00:00, 1013900.43it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -3006,7 +2995,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6853f9da">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8c6139dc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3017,7 +3006,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b2e8bd9e">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b8c35413">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3073,7 +3062,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3cfce165">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4172ffe6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3178,13 +3167,13 @@ cumulate_scores(sequence_names=result_test_sequences)</div>
         
         
           
-          <a href="../04-finetuning/" class="md-footer__link md-footer__link--next" aria-label="Next: 04 - Fine-tune trackastra model with supervision on nodes.">
+          <a href="../04-finetuning/" class="md-footer__link md-footer__link--next" aria-label="Next: 04 - Fine-tune pre-trained trackastra model with sparse supervision.">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                04 - Fine-tune trackastra model with supervision on nodes.
+                04 - Fine-tune pre-trained trackastra model with sparse supervision.
               </div>
             </div>
             <div class="md-footer__button md-icon">

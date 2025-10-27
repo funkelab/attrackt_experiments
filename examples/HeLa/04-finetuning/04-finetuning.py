@@ -1,4 +1,4 @@
-# # 04 - Fine-tune trackastra model with supervision on `k` nodes.
+# # 04 - Fine-tune pre-trained trackastra model with sparse supervision.
 #
 # This notebook uses the zarr container (created in the first notebook), the embeddings (exported to a csv in the second notebook), and the model trained with unsupervised loss (in the third notebook) to fine-tune the model weights with GT supervision.
 

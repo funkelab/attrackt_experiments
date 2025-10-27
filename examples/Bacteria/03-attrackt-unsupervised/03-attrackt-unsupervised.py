@@ -2,9 +2,6 @@
 #
 # This notebook uses the zarr container (created in the first notebook) and the embeddings (exported to a csv in the second notebook) to train a trackastra model with the attrackt unsupervised loss.
 
-# Create a new dataset class that takes in the zarr container and the image and mask datasets.
-
-
 from attrackt.trackastra.data import CTCZarrData
 import torch
 from torch.utils.data import ConcatDataset

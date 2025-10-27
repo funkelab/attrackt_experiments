@@ -561,7 +561,7 @@
   
   
   <span class="md-ellipsis">
-    04 - Fine-tune trackastra model with supervision on nodes.
+    04 - Fine-tune pre-trained trackastra model with sparse supervision.
     
   </span>
   
@@ -815,7 +815,7 @@
   
   
   <span class="md-ellipsis">
-    04 - Fine-tune trackastra model with supervision on nodes.
+    04 - Fine-tune pre-trained trackastra model with sparse supervision.
     
   </span>
   
@@ -1383,7 +1383,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f93767f5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b2153efc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1393,8 +1393,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <ol>
 <li>Download data</li>
 <li>(Optional) Combine instance segmentation masks from silver and gold ground truth</li>
-<li>Convert image and label data to Zarr format</li>
 <li>Save detections into a CSV file</li>
+<li>Convert image and label data to Zarr format</li>
 <li>Compute tracking accuracy metrics with only d(position) as edge cost</li>
 </ol>
 <h2 id="download-data">Download Data<a class="anchor-link" href="#download-data">¶</a></h2><p>The raw <code>.tif</code> images are first downloaded to the directory specified by <code>data_dir</code>.</p>
@@ -1402,7 +1402,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b3f7cfed">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=24afba4d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1433,7 +1433,7 @@ from attrackt.scripts.cumulate_scores import cumulate_scores</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ca90a0ed">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e74a7e24">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1464,7 +1464,7 @@ zip_url = "https://drive.google.com/uc?id=1Z-dGmuXVO7I-QeCN7dWksxFJrjM6vfwM"</di
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=99c94980">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9b3f525a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1510,7 +1510,7 @@ zip_url = "https://drive.google.com/uc?id=1Z-dGmuXVO7I-QeCN7dWksxFJrjM6vfwM"</di
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fab5b43a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=856df46f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1527,7 +1527,7 @@ zip_url = "https://drive.google.com/uc?id=1Z-dGmuXVO7I-QeCN7dWksxFJrjM6vfwM"</di
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b9bc6a5f">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=661f1daf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1575,7 +1575,7 @@ zip_url = "https://drive.google.com/uc?id=1Z-dGmuXVO7I-QeCN7dWksxFJrjM6vfwM"</di
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=be3b5c02">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=afdc0058">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1623,7 +1623,7 @@ zip_url = "https://drive.google.com/uc?id=1Z-dGmuXVO7I-QeCN7dWksxFJrjM6vfwM"</di
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9907d2fa">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3747ca9c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1639,7 +1639,7 @@ It is used here solely for evaluation purposes (e.g., assigning the values in th
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b4cbba8a">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=baf41f37">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1704,7 +1704,7 @@ img_dir_names = [
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e03f595a">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=75823c2f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1817,7 +1817,7 @@ img_dir_names = [
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fa69f089">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=64327061">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1836,7 +1836,7 @@ entire dataset.</li>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d7034831">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=472fc422">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1863,7 +1863,7 @@ entire dataset.</li>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a0e3c4b2">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c7f6b183">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1943,7 +1943,7 @@ entire dataset.</li>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b4a839b9">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=43b8c4c1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -1955,7 +1955,7 @@ Please ensure <code>gurobi</code> is installed for a faster solving experience.<
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9d1534bc">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=51ceb8f1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2008,7 +2008,7 @@ args = {
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6b54ce6e">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f3db1135">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2068,25 +2068,25 @@ args = {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                                | 0/92 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                      | 0/92 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre> 38%|██████████████████████████████████████▊                                                               | 35/92 [00:00&lt;00:00, 342.86it/s]</pre>
+<pre> 38%|███████████████████████████████████████████████▏                                                                            | 35/92 [00:00&lt;00:00, 342.51it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre> 76%|█████████████████████████████████████████████████████████████████████████████▌                        | 70/92 [00:00&lt;00:00, 317.27it/s]</pre>
+<pre> 76%|██████████████████████████████████████████████████████████████████████████████████████████████▎                             | 70/92 [00:00&lt;00:00, 320.74it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:00&lt;00:00, 371.71it/s]</pre>
+<pre>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 92/92 [00:00&lt;00:00, 375.33it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -2349,13 +2349,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>  0%|                                                                                                             | 0/25271 [00:00&lt;?, ?it/s]</pre>
+<pre>  0%|                                                                                                                                   | 0/25271 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>100%|█████████████████████████████████████████████████████████████████████████████████████████████| 25271/25271 [00:00&lt;00:00, 320271.75it/s]</pre>
+<pre>100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 25271/25271 [00:00&lt;00:00, 325339.34it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -2403,32 +2403,13 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes:   0%|                                                                                           | 0/25420 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating nodes:   0%|                                                                                                                 | 0/25420 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating nodes: 100%|███████████████████████████████████████████████████████████████████████████| 25420/25420 [00:00&lt;00:00, 559076.31it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges:   0%|                                                                                        | 0/25271 [00:00&lt;?, ?it/s]</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FP edges: 100%|████████████████████████████████████████████████████████████████████████| 25271/25271 [00:00&lt;00:00, 920256.79it/s]</pre>
+<pre>Evaluating nodes: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 25420/25420 [00:00&lt;00:00, 567727.41it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -2441,13 +2422,32 @@ Optimization Result
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges:   0%|                                                                                        | 0/25168 [00:00&lt;?, ?it/s]</pre>
+<pre>Evaluating FP edges:   0%|                                                                                                              | 0/25271 [00:00&lt;?, ?it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Evaluating FN edges: 100%|████████████████████████████████████████████████████████████████████████| 25168/25168 [00:00&lt;00:00, 978116.48it/s]</pre>
+<pre>Evaluating FP edges: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 25271/25271 [00:00&lt;00:00, 964908.71it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges:   0%|                                                                                                              | 0/25168 [00:00&lt;?, ?it/s]</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>Evaluating FN edges: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 25168/25168 [00:00&lt;00:00, 984355.12it/s]</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -2525,7 +2525,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=be22924c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c511f490">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2536,7 +2536,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ae45d7cf">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c27eea1d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2569,7 +2569,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9f5af3b2">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9f54937b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2649,7 +2649,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Bacteria/04-finetuning/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 04 - Fine-tune trackastra model with supervision on nodes.">
+          <a href="../../Bacteria/04-finetuning/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 04 - Fine-tune pre-trained trackastra model with sparse supervision.">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2659,7 +2659,7 @@ INFO:attrackt.scripts.motile.run_traccuracy:Results:
                 Previous
               </span>
               <div class="md-ellipsis">
-                04 - Fine-tune trackastra model with supervision on nodes.
+                04 - Fine-tune pre-trained trackastra model with sparse supervision.
               </div>
             </div>
           </a>
